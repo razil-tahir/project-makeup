@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {MakeupService} from '../../services/makeup.service';
 import {Router} from '@angular/router';
 import {MakeupCreatorDialog} from '../academy/makeup-creator.dialog';
-import {MatDialog, MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatSnackBar, MatSnackBarConfig} from '@angular/material';
 import {Makeup2CreatorDialog} from '../academy/makeup2-creator.dialog';
 
 @Component({
@@ -34,7 +34,10 @@ export class MakeupListPage implements OnInit {
   }
 
   show(): void {
-   const dialogRef = this.dialog.open(MakeupCreatorDialog);
+    const config = new MatDialogConfig();
+    config.width = '600px';
+    config.height = '400px';
+   const dialogRef = this.dialog.open(MakeupCreatorDialog, config);
     dialogRef.afterClosed().subscribe(result => {
       this.snackBar.open('Message has been sent', '',
         <MatSnackBarConfig>{duration: 3000});
@@ -42,7 +45,10 @@ export class MakeupListPage implements OnInit {
   }
 
   showMakeup(): void {
-    const dialogRef = this.dialog.open(Makeup2CreatorDialog);
+    const config = new MatDialogConfig();
+    config.width = '1000px';
+    config.height = '2000px';
+    const dialogRef = this.dialog.open(Makeup2CreatorDialog, config);
     dialogRef.afterClosed().subscribe(result => {
       this.snackBar.open('Message has been sent', '',
         <MatSnackBarConfig>{duration: 3000});

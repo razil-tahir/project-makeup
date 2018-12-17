@@ -17,7 +17,7 @@ import {
   MatCheckboxModule,
   MatChipsModule,
   MatNativeDateModule,
-  MatPaginatorModule, MatSnackBarModule,
+  MatPaginatorModule, MatRadioButton, MatRadioModule, MatSelectModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule,
   MatSortModule,
   MatTooltipModule
 } from '@angular/material';
@@ -53,6 +53,12 @@ import {Makeup2CreatorDialog} from '../academy/makeup2-creator.dialog';
     MatChipsModule,
     MatButtonToggleModule,
     MatSnackBarModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+
   ],
   declarations: [
     MakeupListPage,
